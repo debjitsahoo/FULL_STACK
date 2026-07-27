@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Store - Product Page</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+        }
+
+        button {
+            padding: 8px 15px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        .selected {
+            background-color: royalblue;
+            color: white;
+            border: 2px solid black;
+        }
+
+        textarea {
+            width: 350px;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>My Online Store</h1>
+    </header>
+
+    <main>
+
+        <h2>Classic White T-Shirt</h2>
+
+        <form id="cartForm">
+
+            <p><strong>Size:</strong></p>
+
+            <button type="button" class="size-btn">S</button>
+            <button type="button" class="size-btn">M</button>
+            <button type="button" class="size-btn">L</button>
+            <button type="button" class="size-btn">XL</button>
+
+            <p><strong>Quantity:</strong></p>
+
+            <button type="button" id="minus">-</button>
+
+            <span id="quantity">1</span>
+
+            <button type="button" id="plus">+</button>
+
+            <p>
+                <button type="submit">Add to Cart</button>
+            </p>
+
+        </form>
+
+        <hr>
+
+        <section>
+
+            <h3>Customer Reviews</h3>
+
+            <form id="reviewForm">
+
+                <p>Write a Review:</p>
+
+                <textarea rows="4" cols="50" placeholder="Write your review here..."></textarea>
+
+                <p>
+                    <button type="submit">Post Review</button>
+
+                    <button type="reset">Clear</button>
+                </p>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <footer>
+
+        <button>Contact Us</button>
+
+        <button>Help</button>
+
+        <button>Return Policy</button>
+
+    </footer>
+
+    <script>
+        // Quantity Counter
+        let quantity = 1;
+
+        const quantityDisplay = document.getElementById("quantity");
+        const plusBtn = document.getElementById("plus");
+        const minusBtn = document.getElementById("minus");
+
+        plusBtn.addEventListener("click", function () {
+            quantity++;
+            quantityDisplay.textContent = quantity;
+        });
+
+        minusBtn.addEventListener("click", function () {
+            if (quantity > 1) {
+                quantity--;
+                quantityDisplay.textContent = quantity;
+            }
+        });
+
+        // Size Selection
+        const sizeButtons = document.querySelectorAll(".size-btn");
+
+        sizeButtons.forEach(button => {
+            button.addEventListener("click", function () {
+
+                sizeButtons.forEach(btn => {
+                    btn.classList.remove("selected");
+                });
+
+                this.classList.add("selected");
+            });
+        });
+
+        // Add to Cart
+        document.getElementById("cartForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            let selectedSize = "None";
+
+            sizeButtons.forEach(button => {
+                if (button.classList.contains("selected")) {
+                    selectedSize = button.textContent;
+                }
+            });
+
+            alert(
+                "Product Added to Cart!\n\n" +
+                "Size: " + selectedSize +
+                "\nQuantity: " + quantity
+            );
+        });
+
+        // Review Form
+        document.getElementById("reviewForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            alert("Thank you for posting your review!");
+        });
+    </script>
+<script src="script.js"></script>
+</body>
+</html>

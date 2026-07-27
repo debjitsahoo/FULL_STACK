@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Admission Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend style="text-align: center;"><h1>Student Admission Form</h1></legend>
+            <fieldset>
+                <legend><h3>Personal Information</h3></legend>
+                <label>Name:</label>
+                <input type="text" id="name" name="name" required>
+                <br><br>
+                <label>Father's Name:</label>
+                <input type="text" id="fatherName" name="fatherName" required>
+                <br><br>
+                <label>Mother's Name:</label>
+                <input type="text" id="motherName" name="motherName" required>
+                <br><br>
+                <label>Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+                <br><br>
+
+               <fieldset>
+                   <legend>Gender</legend>
+                   
+                   <input type="radio" id="male" name="gender" value="male" required>
+                   <label for="male">Male</label>
+                   <br>
+                   <input type="radio" id="female" name="gender" value="female">
+                   <label for="female">Female</label>
+                   <br>
+                   <input type="radio" id="other" name="gender" value="other">
+                   <label for="other">Other</label>
+                </fieldset>
+
+                <br>
+                <label>Email:</label>
+                <input type="email" id="email" name="email" required>
+                <br><br>
+                <label>Blood Group:</label>
+                <input type="text" id="bloodGroup" name="bloodGroup" list="bloodGroups" placeholder="Select Blood Group">
+                <datalist id="bloodGroups">
+                    <option value="A+">
+                    <option value="A-">
+                    <option value="B+">
+                    <option value="B-">
+                    <option value="AB+">
+                    <option value="AB-">
+                    <option value="O+">
+                    <option value="O-">
+                </datalist>
+                <br><br>
+                
+            </fieldset>
+
+            <fieldset>
+                <legend><h3>Academic Information</h3></legend>
+                <fieldset>
+                    <legend><h4>Class 10</h4></legend>
+                    <label>School Name:</label>
+                    <input type="text" id="schoolName10" name="schoolName10" required>
+                    <br><br>
+                    <label>Board:</label>
+                    <input type="text" id="board10" name="board10" required>
+                    <br><br>
+                    <label>Year of Passing:</label>
+                    <input type="number" id="yearOfPassing10" name="yearOfPassing10" required>
+                    <br><br>
+                    <label>Percentage:</label>
+                    <input type="number" id="percentage10" name="percentage10" required>
+                    <br><br>
+                </fieldset>
+                <fieldset>
+                    <legend><h4>Class 12</h4></legend>
+                    <label>School Name:</label>
+                    <input type="text" id="schoolName12" name="schoolName12" required>
+                    <br><br>
+                    <label>Board:</label>
+                    <input type="text" id="board12" name="board12" required>
+                    <br><br>
+                    <label>Year of Passing:</label>
+                    <input type="number" id="yearOfPassing12" name="yearOfPassing12" required>
+                    <br><br>
+                    <label>Percentage:</label>
+                    <input type="number" id="percentage12" name="percentage12" required>
+                    <br><br>
+                </fieldset>
+                <br>
+                <label>Course Applying For:</label>
+                <input type="text" id="course" name="course" list="courses" placeholder="Select Course">
+                <datalist id="courses">
+                    <option value="B.Tech">
+                    <option value="M.Tech">
+                    <option value="BCA">
+                    <option value="MCA">
+                </datalist>
+                <br><br>
+                <label>Department Applying For:</label>
+                <input type="text" id="department" name="department" list="departments" placeholder="Select Department">
+                <datalist id="departments">
+                    <option value="Computer Science">B.Tech/M.Tech</option>
+                    <option value="Electrical Engineering">B.Tech/M.Tech</option>
+                    <option value="Mechanical Engineering">B.Tech/M.Tech</option>
+                    <option value="Civil Engineering">B.Tech/M.Tech</option>
+                    <option value="Electronics and Communication">B.Tech/M.Tech</option>
+                    <option value="Computer Application">BCA/MCA</option>
+                </datalist>
+                <br><br>
+                
+
+             
+            </fieldset>
+
+            
+
+            <fieldset>
+                <legend><h3>Contact Information</h3></legend>
+                <label>Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+                <br><br>
+                <label>Parent's Number:</label>
+                <input type="tel" id="parentPhone" name="parentPhone" required>
+                <br><br>
+                <label >Address:</label>
+                <textarea id="address" name="address" rows="4" cols="50" required></textarea>
+                <br><br>
+                <label>City:</label>
+                <input type="text" id="city" name="city" required>
+                <br><br>
+                <label>State:</label>
+                <input type="text" id="state" name="state" required>
+                <br><br>
+                <label>Pincode:</label>
+                <input type="number" id="pincode" name="pincode" required>
+            </fieldset>
+
+            <br>
+            <label>Tell us about yourself:</label></h5>
+            <br>
+            <textarea id="additionalInfo" name="additionalInfo" rows="4" cols="50" placeholder="Any additional information..."></textarea>
+            <br><br>
+            <label>Declaration:</label>
+            <input type="checkbox" id="declaration" name="declaration" required>
+            <label for="declaration">I hereby declare that the information provided is true and correct to the best of my knowledge.</label>
+
+            <br><br><br>
+            <button style="padding: 15px 30px; font-size: 18px; width: 200px;" type="submit">Submit</button>
+        </fieldset>
+    </form>
+</body>
+</html>
